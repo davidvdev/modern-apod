@@ -1,30 +1,31 @@
-.App 
-  text-align: center
-
-.App-logo 
-  height: 40vmin
-  pointer-events: none
-
-@media (prefers-reduced-motion: no-preference) 
-  .App-logo 
-    animation: App-logo-spin infinite 20s linear
+// pallete
+$blue: #84B6E6
+$l-blue: #E4F7FF
+$l-yellow: #FEF7DE
+$yellow: #EEC776
+$w-black: #423E3B
+$c-black: #36393E
+$n-black: #302C29
   
-.App-header 
-  background-color: #282c34
-  min-height: 100vh
-  display: flex
-  flex-direction: column
-  align-items: center
-  justify-content: center
-  font-size: calc(10px + 2vmin)
-  color: white
+$space-black: linear-gradient(36deg, $w-black 9%, $n-black 39%, $c-black 91%)
+$star-white: linear-gradient(90deg, $blue 0%, $l-blue 3%, $l-yellow 92%, $yellow 100%)
+	
+@mixin text-gradient( $parent, $gradient)
+	#{$parent}
+		background: $gradient
+		color: transparent
+		-webkit-background-clip: text
+		background-clip: text
+	
 
-.App-link 
-  color: #61dafb
+.App
+	text-align: center
+	color: $l-blue
 
-@keyframes App-logo-spin 
-  from 
-    transform: rotate(0deg)
-  
-  to 
-    transform: rotate(360deg)
+
+	h1
+		letter-spacing: 0.1em
+		word-spacing: 100vw
+		line-height: 2em	
+	@include text-gradient( $parent:span , $gradient:$star-white )
+		

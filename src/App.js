@@ -26,7 +26,8 @@ function App() {
 
   return (
     <div className="App">
-      <h1>The Universe is {randomAdjective()}</h1>
+      <header></header>
+      <h1>The Universe is <span className="adj">{randomAdjective()}</span></h1>
       <div className="gallery">
       {apiData !== null &&
         apiData.map((item,index) => <Card key={index} details={item}/>)

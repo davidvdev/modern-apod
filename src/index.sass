@@ -1,6 +1,27 @@
+// pallete
+$blue: #84B6E6
+$l-blue: #E4F7FF
+$l-yellow: #FEF7DE
+$yellow: #EEC776
+$w-black: #423E3B
+$c-black: #36393E
+$n-black: #302C29
+
+
+  
+$space-black: linear-gradient(36deg, $w-black 9%, $n-black 39%, $c-black 91%)
+$star-white: linear-gradient(90deg, $blue 0%, $l-blue 3%, $l-yellow 92%, $yellow 100%)
+  
+html
+  min-height: 100vh
+
 body 
   margin: 0
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen','Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',sans-serif
+  background-color: black
+  background: $space-black
+  background-size: cover
+  color: $star-white
   -webkit-font-smoothing: antialiased
   -moz-osx-font-smoothing: grayscale
 
