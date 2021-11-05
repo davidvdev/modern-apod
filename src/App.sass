@@ -22,7 +22,6 @@ $star-white: linear-gradient(90deg, $blue 0%, $l-blue 3%, $l-yellow 92%, $yellow
 	text-align: center
 	color: $l-blue
 
-
 	h1
 		display: flex
 		flex-direction: column
@@ -34,6 +33,26 @@ $star-white: linear-gradient(90deg, $blue 0%, $l-blue 3%, $l-yellow 92%, $yellow
 		line-height: 2em
 		font-size: 3em	
 	@include text-gradient( $parent:span , $gradient:$star-white )
-		
+
+	.gallery
+		margin: 0 auto
+		display: flex
+		flex-direction: column
+
 #feed-end
 	margin-bottom: 500px
+
+@media screen and ( min-width: 768px)
+	.App
+		.gallery
+			width: 80%
+
+@media screen and ( min-width: 1024px)
+	.App
+		.gallery
+			width: 60%
+
+@media screen and ( min-width: 1440px)
+	.App
+		.gallery
+			width: 30%

@@ -7,6 +7,7 @@ function App() {
 
   const [feedEnd, setFeedEnd] = useState(false)
   const [apiData, setApiData] = useState(null)
+  const [adj, setAdj] = useState('...')
   const domRef = useRef()
 
   // NASA Apod API Call
@@ -22,7 +23,7 @@ function App() {
   }
 
   useEffect(() => { apiCall() }, [feedEnd])
-
+  useEffect(() => {setInterval(randomAdjective, 3000)},[])
   useEffect(()=>{
     const observer = new IntersectionObserver(entries => {
         entries.forEach(entry => {
@@ -34,14 +35,16 @@ function App() {
   },[])  
 
   const randomAdjective = () => {
-    const adj = ['amazing', 'cool', 'vast']
-    return adj[(Math.floor(Math.random() * adj.length))]
+    const adj = [
+      'amazing', 'cool', 'vast', 'grand', 'stellar', 'neat', 'incredible', 'inspiring', 'big', 'very good', 'great', 'wild'
+    ]
+    setAdj(adj[(Math.floor(Math.random() * adj.length))])
   }
 
   return (
     <div className="App">
       <header></header>
-      <h1>The Universe is <span className="adj">{randomAdjective()}</span></h1>
+      <h1>The Universe is <span className="adj">{adj}</span></h1>
       <div className="gallery">
       {apiData !== null &&
         apiData.map((item,index) => <Card key={index} details={item}/>)
